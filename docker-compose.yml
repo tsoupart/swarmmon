@@ -135,6 +135,7 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/rootfs:ro
+      - /etc/hostname:/etc/nodename
     command:
       - '--path.sysfs=/host/sys'
       - '--path.procfs=/host/proc'
