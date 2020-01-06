@@ -6,6 +6,9 @@ networks:
     attachable: true
   database:
     external: true
+  networks:
+    proxy:
+      external: true
 
 volumes:
     prometheus: {}
@@ -29,7 +32,7 @@ services:
     networks:
       - net
     environment:
-      - DOCKER_GWBRIDGE_IP=172.18.0.1
+      - DOCKER_GWBRIDGE_IP='172.18.0.1'
     configs:
       - source: dockerd_config
         target: /etc/caddy/Caddyfile
@@ -155,6 +158,7 @@ services:
     networks:
       - net
       - database
+      - proxy
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'

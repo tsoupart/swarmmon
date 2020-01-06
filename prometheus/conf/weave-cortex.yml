@@ -57,3 +57,11 @@ scrape_configs:
       - 'tasks.postgres-exporter-pg-1'
       type: 'A'
       port: 9187
+      
+  - job_name: 'traefik'
+    scrape_interval: 5s
+    dns_sd_configs:
+    - names:
+      - 'tasks.traefik'
+      type: 'A'
+      port: 8080
