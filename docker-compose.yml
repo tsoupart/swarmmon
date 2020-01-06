@@ -6,9 +6,8 @@ networks:
     attachable: true
   database:
     external: true
-  networks:
-    proxy:
-      external: true
+  proxy:
+    external: true
 
 volumes:
     prometheus: {}
