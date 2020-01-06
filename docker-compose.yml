@@ -78,6 +78,7 @@ services:
       #- GF_SMTP_HOST=${GF_SMTP_HOST:-smtp:25}
       #- GF_SMTP_USER=${GF_SMTP_USER}
       #- GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
     volumes:
       - grafana:/var/lib/grafana
     deploy:
